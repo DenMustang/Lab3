@@ -6,11 +6,8 @@ import ua.lviv.iot.model.SortType;
 
 public class ExhibitManagerUtils {
 
-    public static void SortByTime(List<Exhibits> exhibits, SortType sortType) {
-    }
-    public static void SortByDecade(List<Exhibits> exhibits, SortType sortType) {
-
-    }
+    public static void sortByTime(List<Exhibits> exhibits, SortType sortType) { }
+    public static void sortByDecade(List<Exhibits> exhibits, SortType sortType) { }
 
 }
 

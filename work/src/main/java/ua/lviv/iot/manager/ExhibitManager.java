@@ -1,36 +1,53 @@
 package ua.lviv.iot.manager;
 
 
-import ua.lviv.iot.model.Exhibits;
+import ua.lviv.iot.model.Weapons;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ExhibitManager {
 
-    private List<Exhibits> exhibits = new LinkedList<>();
+    private List<Weapons> arsenal = new LinkedList<>();
 
-    public ExhibitManager(List<Exhibits> exhibits) {
-        this.exhibits = exhibits;
-
-    }
-
-    public ExhibitManager() {
+    public void addWeaponsToArsenal(Weapons weapons){
+        this.arsenal.add(weapons);
 
     }
 
-    public void addExhibits(Exhibits exhibits) {
-        this.exhibits.add(exhibits);
+    public void removeWeaponsFromArsenal(Weapons weapons){
+        this.arsenal.remove(weapons);
+
     }
 
-    public List<Exhibits> getExhibitByDecade(int decade) {
-        List<Exhibits> result = new LinkedList<>();
-        for (Exhibits exhibits : exhibits) {
-            if (exhibits.getDecade() == decade) {
-                result.add(exhibits);
+    public void displayArsenalInfo(){
+        for (Weapons weapons : this.arsenal){
+            System.out.println(weapons.toString());
+        }
+    }
+
+    public List<Weapons> findWeaponByDecade(int decade){
+        ArrayList<Weapons> result = new ArrayList<Weapons>();
+        for (Weapons weapons : this.arsenal){
+            if (weapons.getDecade() == decade ){
+                result.add(weapons);
+
             }
         }
         return result;
-
     }
+
+    public List<Weapons> findWeaponByAuthor(String author){
+        ArrayList<Weapons> result = new ArrayList<Weapons>();
+        for (Weapons weapons : this.arsenal){
+            if (weapons.getAuthor() == author ){
+                result.add(weapons);
+
+            }
+        }
+        return result;
+    }
+
+
 
 }

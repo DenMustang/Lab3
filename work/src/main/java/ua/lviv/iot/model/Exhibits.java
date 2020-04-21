@@ -12,7 +12,6 @@ public abstract class Exhibits {
 
     public Exhibits(String author, int weightInKg, String description, String nameOfExhibit, int measureInMm,
                     int decade) {
-        super();
         this.author = author;
         this.weightInKg = weightInKg;
         this.description = description;

@@ -11,5 +11,9 @@ public class Weapons extends Exhibits {
         this.typeOfWeapon=typeOfWeapon;
     }
 
+    @Override
+    public String toString(){
+        return " author is " + this.getAuthor() + "; decade is " + this.getDecade() + "; description is " + this.getDescription() + "; name of exhibit " + this.getNameOfExhibit() + "; measure in mm " + this.getMeasureInMm() + "; weight in Kg  " + this.getWeightInKg() + "; type of weapon " + this.typeOfWeapon;
+    }
 }
 

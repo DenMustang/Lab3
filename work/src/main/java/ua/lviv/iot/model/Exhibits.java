@@ -7,89 +7,71 @@ public abstract class Exhibits {
     private String nameOfExhibit;
     private int measureInMm;
     private int decade;
+    private int age;
 
-
-
-    public Exhibits(String author, int weightInKg, String description, String nameOfExhibit, int measureInMm,
-                    int decade) {
+    public Exhibits(String author, int weightInKg, String description, String nameOfExhibit, int measureInMm, int decade, int age) {
         this.author = author;
         this.weightInKg = weightInKg;
         this.description = description;
         this.nameOfExhibit = nameOfExhibit;
         this.measureInMm = measureInMm;
         this.decade = decade;
+        this.age = age;
     }
 
-
-
-    public String getAuthor() {
+    public final String getAuthor() {
         return author;
     }
 
-
-
-    public void setAuthor(String author) {
+    public final void setAuthor(String author) {
         this.author = author;
     }
 
-
-
-    public int getWeightInKg() {
+    public final int getWeightInKg() {
         return weightInKg;
     }
 
-
-
-    public void setWeightInKg(int weightInKg) {
+    public final void setWeightInKg(int weightInKg) {
         this.weightInKg = weightInKg;
     }
 
-
-
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
 
-
-
-    public void setDescription(String description) {
+    public final void setDescription(String description) {
         this.description = description;
     }
 
-
-
-    public String getNameOfExhibit() {
+    public final String getNameOfExhibit() {
         return nameOfExhibit;
     }
 
-
-
-    public void setNameOfExhibit(String nameOfExhibit) {
+    public final void setNameOfExhibit(String nameOfExhibit) {
         this.nameOfExhibit = nameOfExhibit;
     }
 
-
-
-    public int getMeasureInMm() {
+    public final int getMeasureInMm() {
         return measureInMm;
     }
 
-
-
-    public void setMeasureInMm(int measureInMm) {
+    public final void setMeasureInMm(int measureInMm) {
         this.measureInMm = measureInMm;
     }
 
-
-
-    public int getDecade() {
+    public final int getDecade() {
         return decade;
     }
 
-
-
-    public void setDecade(int decade) {
+    public final void setDecade(int decade) {
         this.decade = decade;
     }
 
+    public final int getAge() {
+        return age;
+    }
+
+    public final void setAge(int age) {
+        this.age = age;
+    }
 }

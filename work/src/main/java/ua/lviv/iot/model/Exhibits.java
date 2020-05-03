@@ -19,6 +19,15 @@ public abstract class Exhibits {
         this.age = age;
     }
 
+
+    public String toCSV() {
+        return "author = " + getAuthor() + ","
+                + " weightInKg = " + getWeightInKg() + ","
+                + " nameOfExhibit = " + getNameOfExhibit() + ","
+                + " decade = " + getDecade() + ","
+                + " age = " + getAge() ;
+    }
+
     public final String getAuthor() {
         return author;
     }
@@ -74,4 +83,6 @@ public abstract class Exhibits {
     public final void setAge(int age) {
         this.age = age;
     }
+
+
 }

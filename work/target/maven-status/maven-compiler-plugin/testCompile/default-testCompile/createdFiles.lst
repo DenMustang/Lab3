@@ -1,2 +1,4 @@
-ua/lviv/iot/manager/WeaponManagerTest.class
+ua/lviv/iot/manager/SortingTest.class
 ua/lviv/iot/manager/BaseExhibitManagerTest.class
+ua/lviv/iot/manager/ExhibitManagerUtilsTest.class
+ua/lviv/iot/manager/WeaponManagerTest.class

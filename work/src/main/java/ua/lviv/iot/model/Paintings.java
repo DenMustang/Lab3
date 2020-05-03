@@ -10,6 +10,11 @@ public class Paintings extends Exhibits {
         this.styleOfPaintings = styleOfPaintings;
     }
 
+    public final String toCSV() {
+        return super.toCSV() + "," + " styleOfPainting = " + getStyleOfPaintings() + ","
+                + " colourOfFrame = " + getColourOfFrame();
+    }
+
     public final String getStyleOfPaintings() {
         return styleOfPaintings;
     }
@@ -25,4 +30,8 @@ public class Paintings extends Exhibits {
     public final void setColourOfFrame(String colourOfFrame) {
         this.colourOfFrame = colourOfFrame;
     }
+
+
+
+
 }

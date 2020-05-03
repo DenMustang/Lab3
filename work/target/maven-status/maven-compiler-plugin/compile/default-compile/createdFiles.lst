@@ -1,8 +1,9 @@
+ua/lviv/iot/manager/ExhibitManagerUtils$WeaponsInArsenalSortedByAge.class
+ua/lviv/iot/manager/ExhibitManagerUtils$1.class
 ua/lviv/iot/model/SortType.class
+ua/lviv/iot/manager/ExhibitManagerUtils$WeaponsInArsenalSortedByDecade.class
 ua/lviv/iot/manager/ExhibitManagerUtils.class
-ua/lviv/iot/model/AgeOfExhibits.class
 ua/lviv/iot/model/Weapons.class
 ua/lviv/iot/model/Paintings.class
-ua/lviv/iot/model/Sculptures.class
 ua/lviv/iot/manager/ExhibitManager.class
 ua/lviv/iot/model/Exhibits.class

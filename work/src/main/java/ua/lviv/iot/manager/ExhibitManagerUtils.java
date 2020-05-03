@@ -1,5 +1,6 @@
 package ua.lviv.iot.manager;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -8,68 +9,69 @@ import ua.lviv.iot.model.SortType;
 import ua.lviv.iot.model.Weapons;
 
 public class ExhibitManagerUtils {
-
-    private Comparator<Weapons> compareByAuthor = new Comparator<Weapons>() {
+    //anonymous inner class
+    private Comparator<Weapons> compareByTime = new Comparator<Weapons>() {
         @Override
         public int compare(
-                final Weapons firstWeapon, final Weapons secondWeapon) {
+                final Weapons firstWeapon, Weapons secondWeapon) {
             return firstWeapon.getAuthor().compareTo(secondWeapon.getAuthor());
 
         }
     };
-
+    //sorting method(by decade)
     public static void sortWeaponsByTime(
-            final List<Weapons> arsenal, final SortType sortType) {
-        System.out.println("called 'sortWeaponsByTime' func");
+            final List<Weapons> arsenal, SortType sortType) {
+        System.out.println("Sorted Weapon By Time");
         if (sortType == SortType.ASCENDING) {
             arsenal.sort(Comparator.comparing(Exhibits::getDecade));
         } else if (sortType == SortType.DESCENDING) {
-            arsenal.sort(
-                    Comparator.comparing(Exhibits::getDecade).reversed());
+            arsenal.sort(Comparator.comparing(Exhibits::getDecade).reversed());
         } else {
-            System.out.println("error");
+            System.out.println("Fail,something is wrong");
         }
     }
-
+    //sorting method(by age)
     public static void sortWeaponsByAge(
-            final List<Weapons> arsenal, final SortType sortType) {
-        System.out.println("called 'sortWeaponsByAge' func");
+            final List<Weapons> arsenal, SortType sortType) {
+        System.out.println("Sorted Weapon By Decade");
         if (sortType == SortType.ASCENDING) {
             arsenal.sort(Comparator.comparing(Weapons::getAge));
         } else if (sortType == SortType.DESCENDING) {
-            arsenal.sort(
-                    Comparator.comparing(Weapons::getAge).reversed());
+            arsenal.sort(Comparator.comparing(Weapons::getAge).reversed());
         } else {
-            System.out.println("error");
+            System.out.println("Fail,something is wrong");
+        }
+    }
+    //sorting method(by decade(used for private method(inner class sort))
+    public static void sortWeaponsInArsenalByAge(
+            final List<Weapons> arsenal, SortType sortType) {
+        System.out.println("Sorted Weapon By Age");
+        if (sortType == SortType.ASCENDING) {
+            arsenal.sort(new ExhibitManagerUtils.WeaponsInArsenalSortedByAge());
+        } else if (sortType == SortType.DESCENDING) {
+            arsenal.sort(Comparator.comparing(Weapons::getDecade).reversed());
+        } else {
+            System.out.println("Fail,something is wrong");
         }
     }
 
-    public final Comparator<Weapons> getCompareByAuthor() {
-        return compareByAuthor;
-    }
-
-    public final void setCompareByAuthor(
-            final Comparator<Weapons> compareViaAuthor) {
-        this.compareByAuthor = compareViaAuthor;
-    }
-
-    static class WeaponsInArsenalSortedByDecade implements Comparator<Weapons> {
+    //static inner class
+    private static class WeaponsInArsenalSortedByDecade implements Comparator<Weapons> {
         @Override
         public int compare(
-                final Weapons firstWeapon, final Weapons secondWeapon) {
-            return firstWeapon.getDecade()
-                    - secondWeapon.getDecade();
+                final Weapons firstWeapon, Weapons secondWeapon) {
+            return firstWeapon.getDecade() - secondWeapon.getDecade();
+        }
+    }
+    // inner class
+     private static class WeaponsInArsenalSortedByAge implements Comparator<Weapons> {
+        @Override
+        public int compare(
+                Weapons firstWeapon, Weapons secondWeapon) {
+            return firstWeapon.getAge() - secondWeapon.getAge();
         }
     }
 
-    static class WeaponsInArsenalSortedByAge implements Comparator<Weapons> {
-        @Override
-        public int compare(
-                final Weapons firstWeapon, final Weapons secondWeapon) {
-            return (int) (
-                    firstWeapon.getAge() - secondWeapon.getAge());
-        }
-    }
 
 
 }

@@ -17,6 +17,9 @@ public class Weapons extends Exhibits {
         this.typeOfWeapon = typeOfWeapon;
     }
 
+    public final String toCSV() {
+        return super.toCSV() + "," + " typeOfWeapon = " + getTypeOfWeapon();
+    }
 
     @Override
     public String toString() {

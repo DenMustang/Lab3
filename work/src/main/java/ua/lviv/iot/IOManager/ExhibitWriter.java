@@ -10,21 +10,21 @@ import java.util.List;
 
 public class ExhibitWriter {
 
-    private final Writer writer;
+    public final Writer writer;
 
     public ExhibitWriter(final Writer writer) {
         this.writer = writer;
     }
 
     public static void inputStaticTextToFile(final String fileName, final String... lines) throws IOException {
-        final File file = new File(fileName);
+        File file = new File(fileName);
         Writer writer = new FileWriter(file);
         for (String line : lines) {
             writer.write(line);
-            writer.write("\r\n");
+            writer.write("\r");
         }
         writer.flush();
-
+        writer.close();
     }
 
     public static void outputStaticTextOfFile(final String file) throws IOException {
@@ -34,16 +34,4 @@ public class ExhibitWriter {
         }
     }
 
-    public final void inputText(final String... lines) throws IOException {
-        for (String line : lines) {
-            writer.write(line);
-            writer.write("\r\n");
-        }
-        writer.flush();
-    }
-
-    @Override
-    public final String toString() {
-        return writer.toString();
-    }
 }

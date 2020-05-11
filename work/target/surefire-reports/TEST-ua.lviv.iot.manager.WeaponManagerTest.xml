@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ua.lviv.iot.manager.WeaponManagerTest" time="0.004" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ua.lviv.iot.manager.WeaponManagerTest" time="0.011" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="UA"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire/surefirebooter7548997760112891177.jar /Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire 2020-05-01T12-40-47_470-jvmRun1 surefire8424429187869887604tmp surefire_010322500113895945641tmp"/>
+    <property name="sun.java.command" value="/Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire/surefirebooter4647632980258278285.jar /Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire 2020-05-06T01-42-49_006-jvmRun1 surefire2169620463473765458tmp surefire_013646332811953238595tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/myhome/Desktop/iot-labs/Lab3/work/target/test-classes:/Users/myhome/Desktop/iot-labs/Lab3/work/target/classes:/Users/myhome/.m2/repository/org/junit/jupiter/junit-jupiter/5.7.0-M1/junit-jupiter-5.7.0-M1.jar:/Users/myhome/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0-M1/junit-jupiter-api-5.7.0-M1.jar:/Users/myhome/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/myhome/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/myhome/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0-M1/junit-platform-commons-1.7.0-M1.jar:/Users/myhome/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.0-M1/junit-jupiter-params-5.7.0-M1.jar:/Users/myhome/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0-M1/junit-jupiter-engine-5.7.0-M1.jar:/Users/myhome/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0-M1/junit-platform-engine-1.7.0-M1.jar:/Users/myhome/.m2/repository/junit/junit/4.13/junit-4.13.jar:/Users/myhome/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire/surefirebooter7548997760112891177.jar"/>
+    <property name="surefire.real.class.path" value="/Users/myhome/Desktop/iot-labs/Lab3/work/target/surefire/surefirebooter4647632980258278285.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
@@ -53,6 +53,6 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="testFindWeaponByDecade" classname="ua.lviv.iot.manager.WeaponManagerTest" time="0"/>
-  <testcase name="testDisplayWeapons" classname="ua.lviv.iot.manager.WeaponManagerTest" time="0.002"/>
+  <testcase name="testFindWeaponByDecade" classname="ua.lviv.iot.manager.WeaponManagerTest" time="0.001"/>
+  <testcase name="testDisplayWeapons" classname="ua.lviv.iot.manager.WeaponManagerTest" time="0.007"/>
 </testsuite>

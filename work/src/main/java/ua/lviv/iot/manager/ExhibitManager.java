@@ -8,22 +8,22 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ExhibitManager {
-    //create new list of weapons = arsenal
-    private List<Weapons> arsenal = new LinkedList<>();
 
-    //adds weapon in list<weapons>
-    public void addWeaponsToArsenal(Weapons weapons) {
+
+    private final List<Weapons> arsenal = new LinkedList<>();
+
+    public final void addWeaponsToArsenal(final Weapons weapons) {
         this.arsenal.add(weapons);
 
     }
-    //displays weapon info
-    public void displayArsenalInfo() {
+
+    public final void displayArsenalInfo() {
         for (Weapons weapons : this.arsenal) {
             System.out.println(weapons.toString());
         }
     }
-    //finds weapons by decade
-    public List<Weapons> findWeaponByDecade(int decade) {
+
+     public final List<Weapons> findWeaponByDecade(final int decade) {
         ArrayList<Weapons> result = new ArrayList<Weapons>();
         for (Weapons weapons : this.arsenal) {
             if (weapons.getDecade() == decade) {

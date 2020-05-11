@@ -1,6 +1,5 @@
 package ua.lviv.iot.manager;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -9,18 +8,20 @@ import ua.lviv.iot.model.SortType;
 import ua.lviv.iot.model.Weapons;
 
 public class ExhibitManagerUtils {
+
     //anonymous inner class
-    private Comparator<Weapons> compareByTime = new Comparator<Weapons>() {
+    public Comparator<Weapons> compareByTime = new Comparator<Weapons>() {
         @Override
         public int compare(
-                final Weapons firstWeapon, Weapons secondWeapon) {
+                final Weapons firstWeapon, final Weapons secondWeapon) {
             return firstWeapon.getAuthor().compareTo(secondWeapon.getAuthor());
 
         }
     };
+
     //sorting method(by decade)
     public static void sortWeaponsByTime(
-            final List<Weapons> arsenal, SortType sortType) {
+            final List<Weapons> arsenal, final SortType sortType) {
         System.out.println("Sorted Weapon By Time");
         if (sortType == SortType.ASCENDING) {
             arsenal.sort(Comparator.comparing(Exhibits::getDecade));
@@ -30,9 +31,10 @@ public class ExhibitManagerUtils {
             System.out.println("Fail,something is wrong");
         }
     }
+
     //sorting method(by age)
     public static void sortWeaponsByAge(
-            final List<Weapons> arsenal, SortType sortType) {
+            final List<Weapons> arsenal, final SortType sortType) {
         System.out.println("Sorted Weapon By Decade");
         if (sortType == SortType.ASCENDING) {
             arsenal.sort(Comparator.comparing(Weapons::getAge));
@@ -42,9 +44,9 @@ public class ExhibitManagerUtils {
             System.out.println("Fail,something is wrong");
         }
     }
+
     //sorting method(by decade(used for private method(inner class sort))
-    public static void sortWeaponsInArsenalByAge(
-            final List<Weapons> arsenal, SortType sortType) {
+    public static void sortWeaponsInArsenalByAge(final List<Weapons> arsenal, final SortType sortType) {
         System.out.println("Sorted Weapon By Age");
         if (sortType == SortType.ASCENDING) {
             arsenal.sort(new ExhibitManagerUtils.WeaponsInArsenalSortedByAge());
@@ -54,25 +56,28 @@ public class ExhibitManagerUtils {
             System.out.println("Fail,something is wrong");
         }
     }
+    //setter x getter for compareByTime
+    public Comparator<Weapons> getCompareByTime() {
+        return compareByTime;
+    }
+    public void setCompareByTime(final Comparator<Weapons> compareViaTime) {
+        this.compareByTime = compareViaTime;
+    }
 
     //static inner class
-    private static class WeaponsInArsenalSortedByDecade implements Comparator<Weapons> {
+    static class WeaponsInArsenalSortedByDecade implements Comparator<Weapons> {
         @Override
-        public int compare(
-                final Weapons firstWeapon, Weapons secondWeapon) {
+        public int compare(final Weapons firstWeapon, final Weapons secondWeapon) {
             return firstWeapon.getDecade() - secondWeapon.getDecade();
         }
     }
-    // inner class
-     private static class WeaponsInArsenalSortedByAge implements Comparator<Weapons> {
+
+    //static inner class
+    static class WeaponsInArsenalSortedByAge implements Comparator<Weapons> {
         @Override
-        public int compare(
-                Weapons firstWeapon, Weapons secondWeapon) {
+        public int compare(final Weapons firstWeapon, final Weapons secondWeapon) {
             return firstWeapon.getAge() - secondWeapon.getAge();
         }
     }
 
-
-
 }
-

@@ -7,7 +7,7 @@ public abstract class Exhibits {
     private String nameOfExhibit;
     private int measureInMm;
     private int decade;
-
+    private int id;
 
 
     public Exhibits(String author, int weightInKg, String description, String nameOfExhibit, int measureInMm,
@@ -25,9 +25,6 @@ public abstract class Exhibits {
     public String getAuthor() {
         return author;
     }
-
-
-
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -37,9 +34,6 @@ public abstract class Exhibits {
     public int getWeightInKg() {
         return weightInKg;
     }
-
-
-
     public void setWeightInKg(int weightInKg) {
         this.weightInKg = weightInKg;
     }
@@ -49,9 +43,6 @@ public abstract class Exhibits {
     public String getDescription() {
         return description;
     }
-
-
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -61,9 +52,6 @@ public abstract class Exhibits {
     public String getNameOfExhibit() {
         return nameOfExhibit;
     }
-
-
-
     public void setNameOfExhibit(String nameOfExhibit) {
         this.nameOfExhibit = nameOfExhibit;
     }
@@ -73,23 +61,17 @@ public abstract class Exhibits {
     public int getMeasureInMm() {
         return measureInMm;
     }
-
-
-
     public void setMeasureInMm(int measureInMm) {
         this.measureInMm = measureInMm;
     }
 
 
 
-    public int getDecade() {
-        return decade;
-    }
-
-
-
+    public int getDecade() { return decade; }
     public void setDecade(int decade) {
         this.decade = decade;
     }
 
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 }

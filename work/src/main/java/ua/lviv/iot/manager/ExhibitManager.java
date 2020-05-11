@@ -2,52 +2,36 @@ package ua.lviv.iot.manager;
 
 
 import ua.lviv.iot.model.Weapons;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ExhibitManager {
 
-    private List<Weapons> arsenal = new LinkedList<>();
 
-    public void addWeaponsToArsenal(Weapons weapons){
+    private final List<Weapons> arsenal = new LinkedList<>();
+
+    public final void addWeaponsToArsenal(final Weapons weapons) {
         this.arsenal.add(weapons);
 
     }
 
-    public void removeWeaponsFromArsenal(Weapons weapons){
-        this.arsenal.remove(weapons);
-
-    }
-
-    public void displayArsenalInfo(){
-        for (Weapons weapons : this.arsenal){
+    public final void displayArsenalInfo() {
+        for (Weapons weapons : this.arsenal) {
             System.out.println(weapons.toString());
         }
     }
 
-    public List<Weapons> findWeaponByDecade(int decade){
+     public final List<Weapons> findWeaponByDecade(final int decade) {
         ArrayList<Weapons> result = new ArrayList<Weapons>();
-        for (Weapons weapons : this.arsenal){
-            if (weapons.getDecade() == decade ){
+        for (Weapons weapons : this.arsenal) {
+            if (weapons.getDecade() == decade) {
                 result.add(weapons);
 
             }
         }
         return result;
     }
-
-    public List<Weapons> findWeaponByAuthor(String author){
-        ArrayList<Weapons> result = new ArrayList<Weapons>();
-        for (Weapons weapons : this.arsenal){
-            if (weapons.getAuthor() == author ){
-                result.add(weapons);
-
-            }
-        }
-        return result;
-    }
-
-
 
 }

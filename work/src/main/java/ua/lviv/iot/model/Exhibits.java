@@ -1,5 +1,11 @@
 package ua.lviv.iot.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Exhibits {
     private String author;
     private int weightInKg;
@@ -8,6 +14,8 @@ public abstract class Exhibits {
     private int measureInMm;
     private int decade;
     private int age;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     public Exhibits(final String author, final int weightInKg, final String description, final String nameOfExhibit, final int measureInMm, final int decade, final int age) {
@@ -20,6 +28,8 @@ public abstract class Exhibits {
         this.age = age;
     }
 
+    public Exhibits() {
+    }
 
     public String toCSV() {
         return "author = " + getAuthor() + " , "
@@ -77,13 +87,19 @@ public abstract class Exhibits {
         this.decade = decade;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
     public final int getAge() {
         return age;
     }
     public final void setAge(final int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

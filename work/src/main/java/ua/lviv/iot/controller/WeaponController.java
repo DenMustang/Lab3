@@ -1,53 +1,52 @@
 package ua.lviv.iot.controller;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ua.lviv.iot.business.WeaponsService;
 import ua.lviv.iot.model.Weapons;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @RequestMapping("/weapons")
 @RestController
 public class WeaponController {
 
-    private static final Map<Integer, Weapons> weaponsHashMap = new HashMap<>();
-
-    private static AtomicInteger idCounter = new AtomicInteger();
+    @Autowired
+    private WeaponsService weaponsService;
 
     @GetMapping
-    public final List<Weapons> getWeapons() {
-        return new LinkedList<>(weaponsHashMap.values());
+    public final List getWeapons() {
+        return weaponsService.getWeapons();
     }
 
     @GetMapping(path = "/{id}")
     public final Weapons getWeaponById(final @PathVariable("id") Integer weaponId) {
-        return weaponsHashMap.get(weaponId);
+        return weaponsService.getWeaponsById(weaponId);
     }
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public final Weapons createWeapons(final @RequestBody Weapons weapons) {
-        weapons.setId(idCounter.incrementAndGet());
-        weaponsHashMap.put(weapons.getId(), weapons);
-        return weapons;
+        return weaponsService.createWeapons(weapons);
     }
 
     @DeleteMapping(path = "/{id}")
-    public final ResponseEntity<Object> deleteWeapons(final @PathVariable("id") Integer weaponsId) {
-        HttpStatus status = weaponsHashMap.remove(weaponsId) == null ? HttpStatus.NOT_FOUND : HttpStatus.OK;
-        return ResponseEntity.status(status).build();
+    public final void deleteFlowerById(final @PathVariable("id") Integer weaponId) {
+        weaponsService.deleteWeaponsById(weaponId);
     }
 
     @PutMapping(path = "/{id}")
-    public final Weapons updateWeapons(final @PathVariable("id") Integer weaponsId,
-                                       final @RequestBody Weapons weapons) {
-        weapons.setId(weaponsId);
-        return weaponsHashMap.put(weaponsId, weapons);
+    public final ResponseEntity<Object> updateWeaponById(final @PathVariable("id") Integer weaponId,
+                                                         final @RequestBody Weapons weapons) {
+
+        Weapons weaponBeforeUpdate = weaponsService.getWeaponsById(weaponId);
+        if (weaponBeforeUpdate == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        weaponsService.updateWeaponById(weaponId, weapons);
+        return ResponseEntity.ok(weaponBeforeUpdate);
     }
 
 }

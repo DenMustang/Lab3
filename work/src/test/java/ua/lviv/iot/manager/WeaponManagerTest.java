@@ -7,33 +7,26 @@ import ua.lviv.iot.model.Weapons;
 
 import java.util.List;
 
-public class WeaponManagerTest extends BaseExhibitManagerTest{
+public class WeaponManagerTest extends BaseExhibitManagerTest {
     private ExhibitManager exhibitManager;
 
     @BeforeEach
-    public void setUp(){
-      exhibitManager = new ExhibitManager();
-      for (Weapons weapons : arsenal){
-          exhibitManager.addWeaponsToArsenal(weapons);
-      }
+    public void setUp() {
+        exhibitManager = new ExhibitManager();
+        for (Weapons weapons : arsenal) {
+            exhibitManager.addWeaponsToArsenal(weapons);
+        }
     }
 
     @Test
-    public void testFindWeaponByDecade(){
+    public void testFindWeaponByDecade() {
         List<Weapons> weapons = exhibitManager.findWeaponByDecade(1000);
-        Assertions.assertEquals(1,weapons.size());
-        Assertions.assertEquals(1000,weapons.get(0).getDecade());
+        Assertions.assertEquals(1, weapons.size());
+        Assertions.assertEquals(1000, weapons.get(0).getDecade());
     }
 
     @Test
-    public void testFindWeaponByAuthor(){
-        List<Weapons> weapons = exhibitManager.findWeaponByAuthor("GreekAuthor");
-        Assertions.assertEquals(1,weapons.size());
-        Assertions.assertEquals("GreekAuthor",weapons.get(0).getAuthor());
-    }
-
-    @Test
-    public void testShowWeapons(){
+    public void testDisplayWeapons() {
         exhibitManager.displayArsenalInfo();
     }
 

@@ -7,71 +7,89 @@ public abstract class Exhibits {
     private String nameOfExhibit;
     private int measureInMm;
     private int decade;
+    private int age;
     private int id;
 
-
-    public Exhibits(String author, int weightInKg, String description, String nameOfExhibit, int measureInMm,
-                    int decade) {
+    public Exhibits(final String author, final int weightInKg, final String description, final String nameOfExhibit, final int measureInMm, final int decade, final int age) {
         this.author = author;
         this.weightInKg = weightInKg;
         this.description = description;
         this.nameOfExhibit = nameOfExhibit;
         this.measureInMm = measureInMm;
         this.decade = decade;
+        this.age = age;
     }
 
 
+    public String toCSV() {
+        return "author = " + getAuthor() + " , "
+                + " weightInKg = " + getWeightInKg() + " , "
+                + " nameOfExhibit = " + getNameOfExhibit() + " , "
+                + " decade = " + getDecade() + " , "
+                + " age = " + getAge();
+    }
 
-    public String getAuthor() {
+    public String getHeaders() {
+        return " author " + " , " + " weightInKg " + " , " + " nameOfExhibit" + " , " + " decade " + " , " + " age ";
+    }
+
+    public final String getAuthor() {
         return author;
     }
-    public void setAuthor(String author) {
+    public final void setAuthor(final String author) {
         this.author = author;
     }
 
-
-
-    public int getWeightInKg() {
+    public final int getWeightInKg() {
         return weightInKg;
     }
-    public void setWeightInKg(int weightInKg) {
+    public final void setWeightInKg(final int weightInKg) {
         this.weightInKg = weightInKg;
     }
 
-
-
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
-    public void setDescription(String description) {
+    public final void setDescription(final String description) {
         this.description = description;
     }
 
-
-
-    public String getNameOfExhibit() {
+    public final String getNameOfExhibit() {
         return nameOfExhibit;
     }
-    public void setNameOfExhibit(String nameOfExhibit) {
+    public final void setNameOfExhibit(final String nameOfExhibit) {
         this.nameOfExhibit = nameOfExhibit;
     }
 
 
-
-    public int getMeasureInMm() {
+    public final int getMeasureInMm() {
         return measureInMm;
     }
-    public void setMeasureInMm(int measureInMm) {
+    public final void setMeasureInMm(final int measureInMm) {
         this.measureInMm = measureInMm;
     }
 
 
-
-    public int getDecade() { return decade; }
-    public void setDecade(int decade) {
+    public final int getDecade() {
+        return decade;
+    }
+    public final void setDecade(final int decade) {
         this.decade = decade;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+
+    public final int getAge() {
+        return age;
+    }
+    public final void setAge(final int age) {
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

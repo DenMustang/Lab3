@@ -77,13 +77,19 @@ public abstract class Exhibits {
         this.decade = decade;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
     public final int getAge() {
         return age;
     }
     public final void setAge(final int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
